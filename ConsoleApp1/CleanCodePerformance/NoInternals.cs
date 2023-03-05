@@ -2,13 +2,13 @@ namespace ConsoleApp1;
 
 public class NoInternals
 {
-    public static shape_union[] ShapesArray;
+    public shape_union[] ShapesArray;
 
     public NoInternals()
     {
         ShapesArray = new shape_union[100_000];
 
-        for (int i = 0; i < 100_000; i+=4)
+        for (int i = 0; i < ShapesArray.Length; i+=4)
         {
             ShapesArray[i] = new shape_union(shape_type.Shape_Square, 4f, 4f);
             ShapesArray[i + 1] = new shape_union(shape_type.Shape_Rectangle, 13.4f, 84.6f);
