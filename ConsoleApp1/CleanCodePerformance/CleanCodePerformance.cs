@@ -2,13 +2,20 @@ namespace ConsoleApp1;
 
 public class CleanCodePerformance
 {
-    public static List<Shape> Shapes = new()
+    public static Shape[] ShapesArray;
+
+    public CleanCodePerformance()
     {
-        new Circle(74.1f),
-        new Rectangle(13.4f, 84.6f),
-        new Square(4f),
-        new Triangle(49f, 79f)
-    };
+        ShapesArray = new Shape[100_000];
+
+        for (int i = 0; i < 100_000; i+=4)
+        {
+            ShapesArray[i] = new Square(4f);
+            ShapesArray[i + 1] = new Rectangle(13.4f, 84.6f);
+            ShapesArray[i + 2] = new Triangle(49f, 79f);
+            ShapesArray[i + 3] = new Circle(74.1f);
+        }
+    }
 }
 
 

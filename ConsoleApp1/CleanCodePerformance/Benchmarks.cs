@@ -25,7 +25,7 @@ public class Benchmarks
     public float TotalArea()
     {
         float result = 0;
-        foreach (var shape in CleanCodePerformance.Shapes)
+        foreach (var shape in CleanCodePerformance.ShapesArray)
         {
             result += shape.Area();
         }
@@ -37,7 +37,7 @@ public class Benchmarks
     public float TotalAreaNoPoly()
     {
         float result = 0;
-        foreach (var shape in NoPolymorphism.ShapesStruct)
+        foreach (var shape in NoPolymorphism.ShapesArray)
         {
             result += NoPolymorphism.TotalAreaSwitch(shape);
         }
@@ -49,7 +49,7 @@ public class Benchmarks
     public float TotalAreaNoInternals()
     {
         float result = 0;
-        foreach (var shape in NoInternals.ShapesStruct)
+        foreach (var shape in NoInternals.ShapesArray)
         {
             result += NoInternals.TotalAreaSwitchNoInternals(shape);
         }
