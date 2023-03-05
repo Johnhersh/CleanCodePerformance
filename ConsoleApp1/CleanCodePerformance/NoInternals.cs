@@ -10,13 +10,7 @@ public class NoInternals
         new shape_union(shape_type.Shape_Circle, 74.1f, 79f)
     };
 
-    public static Dictionary<shape_type, float> ShapesTable = new()
-    {
-        { shape_type.Shape_Square, 1.0f },
-        { shape_type.Shape_Rectangle, 1.0f },
-        { shape_type.Shape_Triangle, 0.5f },
-        { shape_type.Shape_Circle, float.Pi },
-    };
+    private static float[] ShapesTable = { 1.0f, 1.0f, 0.5f, float.Pi };
 
     public enum shape_type
     {
@@ -42,7 +36,7 @@ public class NoInternals
 
     public static float TotalAreaSwitchNoInternals(shape_union Shape)
     {
-        var result = ShapesTable[Shape.Type] * Shape.Width * Shape.Height;
+        var result = ShapesTable[(int)Shape.Type] * Shape.Width * Shape.Height;
         return result;
     }
 }
